@@ -1,0 +1,48 @@
+{
+  "name": "response",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "response_type": {
+        "type": "string",
+        "enum": [
+          "text",
+          "linux_command"
+        ],
+        "description": "Response types the GPT can give"
+      },
+      "response": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Array of GPT responses. Can be text or a list of commands."
+      },
+      "metacommand": {
+        "type": "string",
+        "description": "Metacommand name. By default, this must be empty"
+      },
+      "error": {
+        "type": "string",
+        "description": "Error response or without data to response. OK_COMPUTER if there's an error. If not this must be empty"
+      },
+      "dangerous_command": {
+        "type": "number",
+        "enum": [
+          0,
+          1
+        ],
+        "description": "Sets if the command is dangerous or requires SUDO mode"
+      }
+    },
+    "required": [
+      "response_type",
+      "response",
+      "metacommand",
+      "error",
+      "dangerous_command"
+    ],
+    "additionalProperties": false
+  }
+}

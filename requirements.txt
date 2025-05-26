@@ -1,0 +1,6 @@
+rich
+aioconsole
+python-dotenv
+openai
+typing_extensions
+psutil
