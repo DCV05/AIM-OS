@@ -1,0 +1,7 @@
+.env
+.venv
+env
+__pycache__
+rich_test.py
+modules/sys_info/Cargo.lock
+modules/sys_info/target
